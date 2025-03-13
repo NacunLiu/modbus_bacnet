@@ -26,11 +26,11 @@ nFail_rs485 = 0
 for _ in range(5000):
     try:
         # Read a register (adjust register number and parameters as needed)
-        nSN1 = meter_rs485.read_register(4102, 0, 3)  # Registernumber, number of decimals, function code
+        nSN1 = meter_rs485.read_register(38144, 0, 3)  # Registernumber, number of decimals, function code
 
         nSuccess_rs485 += 1
         print("************** RS485 **************")
-        print(f"Packet success_rs485: {nSuccess_rs485}")
+        print(f"Packet success_rs485: {nSuccess_rs485}, result is {nSN1}")
         print(f"Packet error_rs485: {nFail_rs485}")
     except IOError:
         nFail_rs485 += 1
